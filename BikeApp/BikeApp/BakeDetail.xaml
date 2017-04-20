@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BikeApp.BakeDetail">
+
+
+    <Label x:Name="label" Text="Resultado de la Busqueda" />
+
+    <ListView x:Name="listadoDatos1" IsPullToRefreshEnabled="true">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding thumb}" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="{Binding id}"/>
+                            <Label Text="{Binding title}"/>
+                            <Label Text="{Binding serial}"/>
+                            <Label Text="{Binding manufacturer_name}"/>
+                            <Label Text="{Binding frame_model}"/>
+                            <Label Text="{Binding year}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BikeApp"
+             x:Class="BikeApp.MainPage">
+
+    <!--<ContentPage.Title>
+        Este es el titulo
+    </ContentPage.Title>-->
+    <!--<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.iOS>0,20,0,0</OnPlatform.iOS>
+        </OnPlatform>
+    </ContentPage.Padding>-->
+    
+    
+    <StackLayout x:Name="content" Orientation="Vertical">
+
+        <Entry x:Name="texto"
+               Placeholder = "Digite el ID de alguna bicicleta"
+			   VerticalOptions="Center" HorizontalOptions="Center" />
+        <Button x:Name="boton" Text="Buscar" Clicked="boton_Clicked" />
+
+        <!--<Label Text="Welcome to Xamarin Forms!" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />-->
+
+        <ListView x:Name="listadoDatos" IsPullToRefreshEnabled="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <!--<StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding thumb}" />
+                                <Label Text="{Binding title}"
+                                TextColor="#f35e20" />
+                                <Label Text="{Binding id}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#503026" />
+                            </StackLayout>-->
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding thumb}" />
+                                <Label Text="{Binding title}"/>
+                                <Label Text="{Binding id}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
